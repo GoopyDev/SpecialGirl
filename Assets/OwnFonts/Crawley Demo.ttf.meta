@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 73dff163df77b664b94a003017464e08
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Crawley
+  fontNames:
+  - Crawley
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 562f7ba439833fe4c9494508a7bbf6ea, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
