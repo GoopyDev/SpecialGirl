@@ -6,7 +6,6 @@ public class ObjectHealth : MonoBehaviour
 {
     [SerializeField] public float health;
     [SerializeField] private Color damageTextColor = default;
-    //[SerializeField] private string damageText;
     [SerializeField] private Vector3 damageTextPosition;
     [SerializeField] private GameObject damageTextObj = default;
     [SerializeField] private GameObject player = default; // Referencia a nuestro jugador
@@ -16,10 +15,9 @@ public class ObjectHealth : MonoBehaviour
     {
         health -= damage;
         // Show damage text over character
-        Debug.Log("Posicion: " + transform.position.x + damageTextPosition.x + " " + transform.position.y + damageTextPosition.y + 1 + " " + transform.position.z + damageTextPosition.z);
-        //damageTextPosition = new Vector3(transform.localPosition.x + damageTextPosition.x, transform.localPosition.y + damageTextPosition.y + 1, transform.localPosition.z + damageTextPosition.z); //Posición del texto
         damageTextPosition = new Vector3(transform.position.x, transform.position.y +1, transform.position.z); //Posición del texto
-        damageTextObj.GetComponent<TMPro.TextMeshPro>().text = damage.ToString(); //
+        damageTextObj.GetComponent<TMPro.TextMeshPro>().text = damage.ToString(); //Indicamos qué texto colocar (el número de fuerza de ataque)
+        damageTextObj.GetComponent<TMPro.TextMeshPro>().color = damageTextColor; //Tomamos el color que posee establecido el componente ObjectHealth (este mismo script)
         Instantiate(damageTextObj, damageTextPosition, damageTextObj.transform.rotation);
 
         if (health <= 0)

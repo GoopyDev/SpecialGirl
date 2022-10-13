@@ -9,9 +9,4 @@ public class AudioEngine : MonoBehaviour
     [SerializeField] public AudioClip       selectBallClip;
     [SerializeField] public AudioClip       birdsClip;
     [SerializeField] public AudioClip       SongClip;
-
-    private void Start()
-    {
-        //myAudio.Play();
-    }
 }

@@ -8,8 +8,6 @@ public class DamagePlayer : MonoBehaviour
     [SerializeField] private bool waitForAttack;
     [SerializeField] private float elapsedTime;
     [SerializeField] private float attackInterval;
-    [SerializeField] private GameObject heartBG;
-    [SerializeField] private GameObject heartFront;
     [SerializeField] private TMPro.TextMeshProUGUI healthAmount;
 
     
@@ -32,12 +30,9 @@ public class DamagePlayer : MonoBehaviour
             if (other.gameObject.layer == LayerMask.NameToLayer("Character"))
             {
                 other.GetComponent<ObjectHealth>().TakeDamage(enemyDamage);
-                heartBG.transform.position += new Vector3(0, -1.25f, 0);
-                heartFront.transform.position += new Vector3(0, 1.25f, 0);
                 healthAmount.text = other.GetComponent<ObjectHealth>().health.ToString() + " / 100";
                 waitForAttack = true;
             }
         }
-
     }
 }

@@ -107,16 +107,15 @@ public class PlayerController : MonoBehaviour
 
         if (currentEnemy != null)
         {
+            CorregirRotacion();                     //Para que el personaje mire directamente a un enemigo
             Debug.Log("Distancia al enemigo: " + Vector3.Distance(transform.position, currentEnemy.transform.position));
-        }
-        if (currentEnemy != null && (Vector3.Distance(transform.position, currentEnemy.transform.position) <= attackRange ))
-        {
-            CorregirRotacion();                 //Para que el personaje mire directamente a un enemigo
-
-            if (attackTime >= attackInterval)   //Si el contador supera nuestro tiempo de intervalo establecido, atacamos.
+            if (Vector3.Distance(transform.position, currentEnemy.transform.position) <= attackRange)
             {
-                attackTime = 0;                 //Restablecemos el contador para los intervalos.
-                m_Animator.SetBool("isAttacking", true);
+                if (attackTime >= attackInterval)   //Si el contador supera nuestro tiempo de intervalo establecido, atacamos.
+                {
+                    attackTime = 0;                 //Restablecemos el contador para los intervalos.
+                    m_Animator.SetBool("isAttacking", true);
+                }
             }
         }
 
